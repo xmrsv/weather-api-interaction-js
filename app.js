@@ -1,6 +1,4 @@
 
-
-
 window.addEventListener('load', () => {
 
     const API_KEY = '5008278ea29e79049769668cd1e80a01';
@@ -12,7 +10,7 @@ window.addEventListener('load', () => {
     let language = 'es';
     let city = 'Lima';
 
-    if(navigator.geolocation) {
+    if (navigator.geolocation) {
         
         navigator.geolocation.getCurrentPosition(position => {
             longitude = position.coords.longitude;
@@ -24,53 +22,54 @@ window.addEventListener('load', () => {
             
 
             // console.log(url)
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
+            fetch (url)
+                .then (response => response.json())
+                .then (data => {
                     let _location = data.name;
                     let _temperature = data.main.temp;
                     let _description = data.weather[0].description;
                     let _windSpeed = data.wind.speed;
-                    let weatherStatus = data.weather[0].main;
+                    // let weatherStatus = data.weather[0].main;
 
                     temperatureValue.textContent = `${_temperature} °C`;
                     temperatureDescription.textContent = `${_description}`;
                     location.textContent = `${_location}`;
-                    windSpeed.textContent = `${_windSpeed}`;
+                    windSpeed.textContent = `${_windSpeed} m/s`;
 
-                    switch(weatherStatus) {
-                        case 'Clear':
-                            icon.src = 'https://img.icons8.com/material/24/000000/sun--v1.png';
-                            console.log('Despejado');
-                            break;
-                        case 'Drizzle':
-                            icon.src = 'https://img.icons8.com/material/24/000000/light-rain.png';
-                            console.log('Lluvia ligera')
-                            break;
-                        case 'Rain':
-                            icon.src = 'https://img.icons8.com/material-outlined/24/000000/rain--v1.png'
-                            console.log('Lluvia');
-                            break;
-                        case 'Snow':
-                            icon.src = 'https://img.icons8.com/material-outlined/24/000000/rain--v1.png'
-                            console.log('Nieve')
-                            break;
-                        case 'Atmosphere':
-                            icon.src = 'https://img.icons8.com/fluency-systems-regular/48/000000/clouds.png'
-                            console.log('Atmosfera');
-                            break;
-                        case 'Clouds':
-                            icon.src = 'https://img.icons8.com/material-outlined/24/000000/cloud--v1.png';
-                            console.log('Nubes');
-                            break;
-                        default:
-                            icon.src = '';
-                            console.log('Por defecto');
-                    }
+                    // // icons
+                    // switch(weatherStatus) {
+                    //     case 'Clear':
+                    //         icon.src = 'https://img.icons8.com/material/24/000000/sun--v1.png';
+                    //         console.log('Despejado');
+                    //         break;
+                    //     case 'Drizzle':
+                    //         icon.src = 'https://img.icons8.com/material/24/000000/light-rain.png';
+                    //         console.log('Lluvia ligera')
+                    //         break;
+                    //     case 'Rain':
+                    //         icon.src = 'https://img.icons8.com/material-outlined/24/000000/rain--v1.png'
+                    //         console.log('Lluvia');
+                    //         break;
+                    //     case 'Snow':
+                    //         icon.src = 'https://img.icons8.com/material-outlined/24/000000/rain--v1.png'
+                    //         console.log('Nieve')
+                    //         break;
+                    //     case 'Atmosphere':
+                    //         icon.src = 'https://img.icons8.com/fluency-systems-regular/48/000000/clouds.png'
+                    //         console.log('Atmosfera');
+                    //         break;
+                    //     case 'Clouds':
+                    //         icon.src = 'https://img.icons8.com/material-outlined/24/000000/cloud--v1.png';
+                    //         console.log('Nubes');
+                    //         break;
+                    //     default:
+                    //         icon.src = '';
+                    //         console.log('Por defecto');
+                    // }
 
                 })
-                .catch(error => {
-                    console.log(error);
+                .catch (error => {
+                    console.log (error);
                 });
         });
 
