@@ -4,10 +4,8 @@ window.addEventListener('load', () => {
 	const temperatureValue = document.getElementById('temperature-value');
 	const temperatureDescription = document.getElementById('temperature-description');
 	const location = document.getElementById('location');
-	// const icon = document.getElementById('weather-icon');
 	const windSpeed = document.getElementById('wind-speed');
 	let language = 'es';
-	// let city = 'Lima';
 
 	if (navigator.geolocation) {
 
@@ -17,10 +15,6 @@ window.addEventListener('load', () => {
 
 			const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=${language}&units=metric&appid=${API_KEY}`
 
-			// const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${language}&units=metric&appid=${API_KEY}`;
-
-
-			// console.log(url)
 			fetch(url)
 				.then(response => response.json())
 				.then(data => {
@@ -28,14 +22,12 @@ window.addEventListener('load', () => {
 					let _temperature = data.main.temp;
 					let _description = data.weather[0].description;
 					let _windSpeed = data.wind.speed;
-					// let weatherStatus = data.weather[0].main;
 
 					temperatureValue.textContent = `${_temperature} °C`;
 					temperatureDescription.textContent = `${_description}`;
 					location.textContent = `${_location}`;
 					windSpeed.textContent = `${_windSpeed} m/s`;
-
-					// // icons
+					/* // icons
 					// switch(weatherStatus) {
 					//     case 'Clear':
 					//         icon.src = 'https://img.icons8.com/material/24/000000/sun--v1.png';
@@ -64,14 +56,11 @@ window.addEventListener('load', () => {
 					//     default:
 					//         icon.src = '';
 					//         console.log('Por defecto');
-					// }
-
+					} */
 				})
 				.catch(error => {
 					console.log(error);
 				});
 		});
-
 	}
-
 });
