@@ -8,12 +8,21 @@ window.addEventListener('load', () => {
 	let language = 'es';
 
 	if (navigator.geolocation) {
-
 		navigator.geolocation.getCurrentPosition(position => {
 			longitude = position.coords.longitude;
 			latitude = position.coords.latitude;
 
-			const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=${language}&units=metric&appid=${API_KEY}`
+			const url = `
+				https://api.openweathermap.org/
+					data/
+						2.5/
+							weather?
+								lat=${latitude}
+								&lon=${longitude}
+								&lang=${language}
+								&units=metric
+								&appid=${API_KEY}
+			`;
 
 			fetch(url)
 				.then(response => response.json())
@@ -27,36 +36,6 @@ window.addEventListener('load', () => {
 					temperatureDescription.textContent = `${_description}`;
 					location.textContent = `${_location}`;
 					windSpeed.textContent = `${_windSpeed} m/s`;
-					/* // icons
-					// switch(weatherStatus) {
-					//     case 'Clear':
-					//         icon.src = 'https://img.icons8.com/material/24/000000/sun--v1.png';
-					//         console.log('Despejado');
-					//         break;
-					//     case 'Drizzle':
-					//         icon.src = 'https://img.icons8.com/material/24/000000/light-rain.png';
-					//         console.log('Lluvia ligera')
-					//         break;
-					//     case 'Rain':
-					//         icon.src = 'https://img.icons8.com/material-outlined/24/000000/rain--v1.png'
-					//         console.log('Lluvia');
-					//         break;
-					//     case 'Snow':
-					//         icon.src = 'https://img.icons8.com/material-outlined/24/000000/rain--v1.png'
-					//         console.log('Nieve')
-					//         break;
-					//     case 'Atmosphere':
-					//         icon.src = 'https://img.icons8.com/fluency-systems-regular/48/000000/clouds.png'
-					//         console.log('Atmosfera');
-					//         break;
-					//     case 'Clouds':
-					//         icon.src = 'https://img.icons8.com/material-outlined/24/000000/cloud--v1.png';
-					//         console.log('Nubes');
-					//         break;
-					//     default:
-					//         icon.src = '';
-					//         console.log('Por defecto');
-					} */
 				})
 				.catch(error => {
 					console.log(error);

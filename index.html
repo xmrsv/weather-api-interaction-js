@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Weather API</title>
+		
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<script src="app.js" defer></script>
+	</head>
+	<body>
+		<header>
+				<span class="logo">Weather API</span>
+			<ul class="navigation">
+				<a class="source-code-link" href="https://github.com/mgrmars/api-weather">Código fuente</a>
+				<a class="profile-link" href="https://github.com/mgrmars">Perfil de Github</a>
+			</ul>
+		</header>
+		<main>
+			<span class="intro">
+				<h1>Weather API</h1>
+				<p>Aplicación web de clima usando la tecnologia API, escrito en Javascript</p>
+			</span>
+			<span class="clima">
+				
+				<p>Temperatura:
+					<span id="temperature-value">
+						Cargando...
+					</span>
+				</p>
+				<p>
+					Cielo:
+					<span class="temperature-description" id="temperature-description">
+						Cargando...
+					</span>
+				</p>
+				<p>
+					Ciudad:
+					<span class="location" id="location">
+						Cargando...
+					</span>
+				</p>
+				<p>Velocidad del viento:
+					<span id="wind-speed">
+						Cargando...
+					</span>
+				</p>
+			</span>
+		</main>
+		<footer>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Weather API</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="app.js" defer></script>
-</head>
-
-<body>
-
-	<main>
-		<span class="container">
-
-			<p>Temperatura:
-				<span id="temperature-value">
-					Cargando
-				</span>
-			</p>
-
-			<p>
-				Cielo:
-				<span class="temperature-description" id="temperature-description">
-					Cargando
-				</span>
-			</p>
-
-			<p>
-				Ciudad:
-				<span class="location" id="location">
-					Cargando
-				</span>
-			</p>
-
-			<p>Velocidad del viento:
-				<span id="wind-speed">
-					Cargando
-				</span>
-			</p>
-
-		</span>
-	</main>
-
-</body>
-
+		</footer>
+	</body>
 </html>
