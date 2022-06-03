@@ -1,3 +1,28 @@
+const openButton = document.getElementById("menu-open");
+const button = document.getElementById("button");
+const navigation = document.getElementById("navigation");
+
+openButton.style.display = "block";
+
+let opened = false;
+
+button.addEventListener("click", () => {
+	
+	if (opened) {
+		opened = false;
+		openButton.innerText = "menu";
+		navigation.style.display = "none";
+	} else {
+		opened = true;
+		openButton.innerText = "close";
+		navigation.style.display = "flex";
+	}
+
+	
+
+});
+
+
 window.addEventListener('load', () => {
 
 	const API_KEY = '5008278ea29e79049769668cd1e80a01';
