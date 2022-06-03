@@ -6,7 +6,11 @@
 	box-sizing: border-box;
 }
 
-header .menu-open, header .menu-close {
+html header #button {
+	display: none;
+}
+
+header #button .menu-open, header #button .menu-close {
 	display: none;
 }
 
@@ -108,9 +112,14 @@ span {
 	}
 
 	header .menu-open {
-		display: block !important; 
+		display: block; 
 		color: hsl(206, 11%, 88%);
 	}
+
+	html header #button {
+		display: block;
+	}
+	
 
 	
 }
