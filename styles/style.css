@@ -10,7 +10,8 @@ html header #button {
 	display: none;
 }
 
-header #button .menu-open, header #button .menu-close {
+header #button .menu-open,
+header #button .menu-close {
 	display: none;
 }
 
@@ -92,8 +93,6 @@ span {
 }
 
 @media only screen and (max-width: 460px) {
-
-
 	header .navigation {
 		position: fixed;
 		display: none;
@@ -105,23 +104,20 @@ span {
 		width: 100%;
 		background-color: hsl(213, 6%, 31%);
 	}
-	
+
 	.navigation a {
 		padding: .5rem;
 		margin: .5rem;
 	}
 
 	header .menu-open {
-		display: block; 
+		display: block;
 		color: hsl(206, 11%, 88%);
 	}
 
 	html header #button {
 		display: block;
 	}
-	
-
-	
 }
 
 body header #button .menu-open .hidden {
@@ -130,4 +126,8 @@ body header #button .menu-open .hidden {
 
 body header #button .menu-close .hidden {
 	display: none;
+}
+
+.temperature-description {
+	text-transform: capitalize;
 }
